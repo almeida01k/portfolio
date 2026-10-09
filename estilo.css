@@ -1,0 +1,209 @@
+
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Aplica globalmente para evitar que paddings quebrem o tamanho dos elementos */
+}
+
+body {
+    background-color: rgb(13, 2, 70);
+    color: #f6f6f6;
+}
+
+/* --- CABEÇALHO --- */
+.cabecalho {
+    padding: 1.5% 0 0 5%;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 60px;
+}
+
+.menu-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: crimson;
+}
+
+/* --- SEÇÃO PRINCIPAL (APRESENTAÇÃO) --- */
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3% 8% 8% 8%; /* Reduzido o topo de 10% para 3% para subir todo o conteúdo */
+    gap: 82px;
+}
+
+.apresentacao-conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Reduzido de 40px para aproximar os blocos de texto */
+}
+
+/* --- TEXTOS --- */
+.apresentacao-titulo {
+    font-size: 2.25rem;
+    font-family: "Krona One", sans-serif;
+    color: rgb(81, 0, 255);
+    text-align: left; /* Alinhado à esquerda para harmonizar melhor com o parágrafo */
+    padding: 0 0 10px 0; /* Removido o padding de 10% que empurrava tudo para baixo */
+    transition: color 0.3s ease;
+}
+
+.apresentacao-titulo:hover {
+    color: crimson;
+}
+
+.apresentacao-paragrafo {
+    font-size: 1.3rem; /* Ajustado levemente para caber melhor na tela */
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+}
+
+.conteudo-texto {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    text-align: justify;
+    padding: 0 15%;
+}
+
+span {
+    color: blue;
+}
+
+.destaque {
+    color: orange;
+}
+
+/* --- LINKS E REDES SOCIAIS --- */
+.apresentacao-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px; /* Reduzido de 32px para os botões ficarem mais juntos e subirem */
+    margin-bottom: 60px; /* Margem de segurança para o GitHub não sumir atrás do footer */
+}
+
+.apresentacao-links-subtitulo {
+    font-family: "Krona One", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    align-self: flex-start; /* Alinha o texto 'Acesse minhas redes' à esquerda */
+}
+
+.apresentacao-links2 {
+    width: 70%; /* Aumentado um pouco a largura para acomodar melhor os ícones e textos */
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 15px 0; /* Reduzido o padding interno para diminuir a altura dos botões */
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    border: 2px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.apresentacao-links2:hover {
+    background-color: #272727;
+}
+
+/* --- DESIGN DA IMAGEM CORRIGIDO (PÁGINA PRINCIPAL E SOBRE MIM) --- */
+#imagem-principal {
+    border-radius: 48%;
+    border: 2px solid gold;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    
+    /* Alterações para dar mais espaço vertical e não cortar a cabeça: */
+    width: 35%;          /* Deixamos um pouco menos larga para ganhar proporção vertical */
+    height: 52vh;        /* Definimos uma altura fixa maior em vez de max-height */
+    object-fit: cover;
+    object-position: top center; /* Força o navegador a focar no topo da foto (sua cabeça) */
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    background-color: gold;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    padding: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Garante que o footer fique sempre na camada correta */
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERY) --- */
+@media (max-width: 1080px) {
+    body {
+        background-color: rgb(21, 11, 224);
+        overflow: auto;
+    }
+
+    .cabecalho {
+        padding: 15px;
+    }
+
+    .cabecalho-menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5% 5% 80px 5%; /* Adicionado espaçamento extra embaixo no mobile */
+        gap: 40px;
+    }
+
+    .apresentacao-conteudo {
+        width: 100%;
+    }
+
+    .apresentacao-links2 {
+        width: 100%; /* Botões ocupam largura total no celular */
+    }
+
+    #imagem-principal,
+    .classe-imagem-sobre {
+        width: 60%;
+        max-height: 40vh;
+    }
+}
+/* --- DESIGN DA IMAGEM CORRIGIDO (PÁGINA PRINCIPAL E SOBRE MIM) --- */
+#imagem-principal {
+    border-radius: 48%;
+    border: 2px solid gold;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    
+    /* Alterações para dar mais espaço vertical e não cortar a cabeça: */
+    width: 35%;          /* Deixamos um pouco menos larga para ganhar proporção vertical */
+    height: 52vh;        /* Definimos uma altura fixa maior em vez de max-height */
+    object-fit: cover;
+    object-position: top center; /* Força o navegador a focar no topo da foto (sua cabeça) */
+}
